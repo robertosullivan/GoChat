@@ -1,0 +1,53 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+body {
+	background-image: url("africa-15428_1280.jpg");
+	background-repeat:repeat-y;
+    background-size:100%;
+    margin:auto;
+	 
+}
+
+h1 {
+	text-align: center;
+	padding:50px;
+	/*font-style:italic;*/
+	font-color:#babbbc;
+}
+
+
+
+#link {
+	margin:auto;
+	text-align: center;
+	background-color: white;
+	width: 10%;
+	height: 30px;
+	border-radius: 5px;
+}
+
+.btn {
+	text-align: center;
+}
+
+#landing {
+	margin:5%;
+	padding:5%;
+	background-color: #193b72;
+	border-radius: 5px;
+	max-width: 20%;
+	margin:auto;
+	text-align: center;
+}
+
+/*.navbar {
+	width:100%;
+	height:120px;
+	background-color: #1d2047;
+	margin:auto;
+	padding-left: 300px;
+} */

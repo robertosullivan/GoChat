@@ -1,0 +1,9 @@
+ <div class="box">
+	 <% @comment.each do |w| %>
+	    <tr>
+	      <td>Location:<%= w.location %></td>		
+	      <td>Title:<%= w.title %></td>
+	      <td>Body:<%= w.body %></td><br>  
+	    </tr>
+	  <% end %>
+ </div> 

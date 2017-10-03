@@ -1,0 +1,39 @@
+    <% if current_user %>
+      Logged in as: <%= current_user.email %><br>
+     <%= link_to "Log Out", log_out_path %>
+    <% else %>
+     <%= link_to "Log In", log_in_path %>
+    <% end %>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">GoChat</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="/comments/new">New Comment</a></li>
+      <li><a href="/comments">View Comments</a></li>
+      <li class="active"><a href="/users/<%= current_user.id %>/">Profile</a></li>
+    </ul>
+  </div>
+</nav>
+ <div class="box">
+<p>
+  Email:
+  <%= @user.email %>
+</p>
+ 
+<p>
+  Password:
+  <%= @user.password %>
+</p>
+<%= link_to 'Edit', edit_user_path %>
+<%= link_to 'Destroy', user_path,
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %><br>
+
+
+	 <% @user.comments.each do |w| %>
+	      <a href="/comments/<%= w.id %>"><%= w.location %> <%= w.title %> <%= w.body %></a><br>	  
+	  <% end %>
+ </div> 

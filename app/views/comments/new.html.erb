@@ -1,0 +1,35 @@
+    <% if current_user %>
+      Logged in as: <%= current_user.email %><br>
+     <%= link_to "Log Out", log_out_path %>
+    <% else %>
+     <%= link_to "Log In", log_in_path %>
+    <% end %>
+
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">GoChat</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/comments/new" class="btn btn-primary" role="button">New Comment</a></li>
+      <li><a href="/comments">View Comments</a></li>
+      <li><a href="/users/<%= current_user.id %>/">Profile</a></li>
+    </ul>
+  </div>
+</nav>
+<div id="comments-form">
+	<%= bootstrap_form_for(@comment) do |c| %>
+	<h3>New Comment</h3>
+	  <%= c.text_field :location %>
+	  <%= c.text_field :title %>
+	  <%= c.text_area :body %>
+	  <%= c.submit ("Submit") %>
+	<% end %>
+</div>	
+
+
+
+
+

@@ -1,0 +1,31 @@
+<br><br>
+<%= bootstrap_form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<h3>Sign Up</h3>
+  <div class="field">
+    <%= f.text_field :email, placeholder: 'email' %>
+  </div>
+  <div class="field">
+    <%= f.password_field :password, placeholder: 'password' %>
+  </div>
+  <div class="field">
+    <%= f.password_field :password_confirmation, placeholder: 'password' %>
+  </div>
+  <div class="actions"><%= f.submit "Sign Up" %></div>
+      <% if current_user %>
+      Logged in as: <%= current_user.email %><br>
+     <%= link_to "Log Out", log_out_path %>
+    <% else %>
+     <%= link_to "Log In", log_in_path %>
+    <% end %>
+<% end %>
+
